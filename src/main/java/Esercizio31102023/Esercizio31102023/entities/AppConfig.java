@@ -1,8 +1,10 @@
 package Esercizio31102023.Esercizio31102023.entities;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
 import java.util.ArrayList;
@@ -10,7 +12,10 @@ import java.util.List;
 
 @Configuration
 @Slf4j
+@PropertySource("application.properties")
 public class AppConfig {
+    @Value("${table.pax}")
+    private int pax;
    @Bean(name = "toppings_tomato")
     public Topping toppingTomatoBean(){
        return new Topping("tomato",0,0);
@@ -119,9 +124,9 @@ public class AppConfig {
 
     }
 
-//    @Bean(name="table1")
-//    public Table creaTable1(){
-//       return new Table(1,5,3,false);
-//    }
+   @Bean(name="table1")
+   public Table creaTable1(){
+      return new Table(1,5,3,false,this.pax);
+   }
 
 }

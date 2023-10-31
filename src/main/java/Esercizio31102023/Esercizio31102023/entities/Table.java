@@ -7,18 +7,16 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Getter
-@PropertySource("application.properties")
-@Component("table1")
 public class Table {
 
     private int numTable;
     private int numMaxCoperti;
     private int numeroCoperti;
     private boolean isFree;
-    @Value("${table.pax}")
     private int pax;
 
-    public Table(@Value("1") int numTable, @Value("5") int numMaxCoperti,@Value("3") int numeroCoperti,@Value("false") boolean isFree) {
+
+    public Table( int numTable,  int numMaxCoperti, int numeroCoperti, boolean isFree, int pax) {
         this.numTable = numTable;
         this.numMaxCoperti = numMaxCoperti;
         this.numeroCoperti = numeroCoperti;

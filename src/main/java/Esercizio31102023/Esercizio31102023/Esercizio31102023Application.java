@@ -15,22 +15,7 @@ public class Esercizio31102023Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Esercizio31102023Application.class, args);
 
-		AnnotationConfigApplicationContext ctx =new AnnotationConfigApplicationContext(Esercizio31102023Application.class);
 
-		Menu m= (Menu) ctx.getBean("menu");
-//		Il metodo seguente va bene solo se c'è un unico bean il metodo sopra è più specifico
-//		Menu m= (Menu) ctx.getBean(Menu.class);
-
-
-		log.info(String.valueOf(m));
-
-		Order order1 = (Order) ctx.getBean("order1");
-		Order order2 = (Order) ctx.getBean("order2");
-		order1.print();
-		order2.print();
-		Table table1=(Table) ctx.getBean("table1");
-		table1.print();;
-		ctx.close();
 	}
 
 }
