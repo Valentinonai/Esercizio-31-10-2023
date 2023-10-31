@@ -21,6 +21,7 @@ public class Table {
         this.numMaxCoperti = numMaxCoperti;
         this.numeroCoperti = numeroCoperti;
         this.isFree = isFree;
+        this.pax=pax;
     }
 
     public int copertoTot(){

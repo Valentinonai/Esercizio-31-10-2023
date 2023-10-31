@@ -13,7 +13,7 @@ import java.util.List;
 @PropertySource("application.properties")
 public class AppConfig {
     @Value("${table.pax}")
-    private int pax;
+    private int p;
    @Bean(name = "toppings_tomato")
     public Topping toppingTomatoBean(){
        return new Topping("tomato",0,0);
@@ -124,7 +124,7 @@ public class AppConfig {
 
    @Bean(name="table1")
    public Table creaTable1(){
-      return new Table(1,5,3,false,this.pax);
+      return new Table(1,5,3,false,this.p);
    }
 
 }
