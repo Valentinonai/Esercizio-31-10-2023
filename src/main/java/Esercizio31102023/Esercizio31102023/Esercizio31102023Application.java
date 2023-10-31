@@ -1,6 +1,8 @@
 package Esercizio31102023.Esercizio31102023;
 
 import Esercizio31102023.Esercizio31102023.entities.Menu;
+import Esercizio31102023.Esercizio31102023.entities.Order;
+import Esercizio31102023.Esercizio31102023.entities.Table;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,6 +23,13 @@ public class Esercizio31102023Application {
 
 
 		log.info(String.valueOf(m));
+
+		Order order1 = (Order) ctx.getBean("order1");
+		Order order2 = (Order) ctx.getBean("order2");
+		order1.print();
+		order2.print();
+		Table table1=(Table) ctx.getBean("table1");
+		table1.print();;
 		ctx.close();
 	}
 

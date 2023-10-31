@@ -3,6 +3,7 @@ package Esercizio31102023.Esercizio31102023.entities;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,4 +96,32 @@ public class AppConfig {
 
        return new Menu(pizzaList,drinkList);
     }
+
+
+    @Bean(name="order1")
+    public Order creaOrdine1(){
+       List<Item> l=new ArrayList<>();
+       l.add(pizzaHawaiianBean());
+       l.add(pizzaHawaiianBean());
+       l.add(pizzaMargheritaBean());
+       l.add(lemonadeBean());
+       return new Order(1,3,l);
+
+    }
+    @Bean(name="order2")
+    public Order creaOrdine2(){
+       List<Item> l=new ArrayList<>();
+       l.add(pizzaMargheritaBean());
+       l.add(pizzaSalamiXlBean());
+       l.add(lemonadeBean());
+       l.add(waterBean());
+       return new Order(1,3,l);
+
+    }
+
+//    @Bean(name="table1")
+//    public Table creaTable1(){
+//       return new Table(1,5,3,false);
+//    }
+
 }
